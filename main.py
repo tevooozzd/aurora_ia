@@ -69,7 +69,7 @@ search_term = ''
 if und_user_au:
     for sinonimo in pesquisar_e_sinonimos:
         if sinonimo in und_user_au:
-            search_term = und_user_au.split(sinonimo, 1)[-1].strip()  # Limita a divisão a 1
-            if search_term:  # Verifica se o termo não está vazio
+            search_term = und_user_au.split(sinonimo, 1)[-1].strip() 
+            if search_term: 
                 search_aurora(search_term)
             break 
