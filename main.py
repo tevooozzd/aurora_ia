@@ -47,3 +47,10 @@ def understanding_user_aurora():
     except sr.UnknownValueError:
         print("I don't understand sorry.")
         return ""
+
+
+und_user_au = ''
+if st_au:
+    und_user_au = understanding_user_aurora()
+    if und_user_au:
+        print(f"User input: {und_user_au}")
