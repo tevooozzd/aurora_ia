@@ -7,6 +7,10 @@ import pyttsx3
 from googlesearch import search
 
 ########################################################
+
+
+# BIBLIOTECA DE PALAVRAS CHAVES PARA PERGUNTAS, DÚVIDAS, QUESTÕES, CURIOSIDADES E ETC
+
 pesquisar_e_sinonimos = {
     'sobre': 1.8,
     'me ajude a encontrar': 1.9,
@@ -30,6 +34,8 @@ pesquisar_e_sinonimos = {
 
 ########################################################
 
+# BIBLIOTECA DE PALAVRAS CHAVES PARA INICIAR O PROGRAMA
+
 dic_iniciar_seg = { 
     'cesta': 0,
     'sexta ': 0,
@@ -38,6 +44,8 @@ dic_iniciar_seg = {
 }
 
 ########################################################
+
+# BIBLIOTECA DE PALAVRAS CHAVES PARA QUESTÕES SOCIAIS (EDUCAÇÃO, PEDI FAVORES ETC)
 
 sociais = {
     'por favor': 1.6,
@@ -49,8 +57,11 @@ sociais = {
 }
 
 ########################################################
+
+# FUNÇÃO QUE INCIA A SEGUNDA-FEIRA (IA)
+
 def inicar_sexta():
-    reconhecer = sr.Recognizer() 
+    reconhecer = sr.Recognizer()    #GUARDA O VALOR DE RECONHECER VOZ EM VARIAVEL
     with sr.Microphone() as microfone:
         reconhecer.adjust_for_ambient_noise(microfone)
         print("SEXTA-FEIRA: Pode falar")
