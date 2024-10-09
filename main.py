@@ -121,13 +121,15 @@ def pesquisar_segunda(pesquisarsite):
     
     if 'leia' in texto:
         print(f"VOCÊ DISSE: {texto}")
-        # Realiza a pesquisa e lê o conteúdo do primeiro site
         for url in search(pesquisarsite, num_results=1):
-            print(f"Acessando: {url}")
+            print('--------------------------------------------------')
+            print(f"Pesquisando sobre: {texto}")
             ler_site(url)
     elif 'redirecione' in texto:
         print(f"VOCÊ DISSE: {texto}")
         webbrowser.open(f"https://www.google.com/search?q={pesquisarsite}")
+
+
 
 def ler_site(url):
     try:
