@@ -38,6 +38,15 @@ pesquisar_e_sinonimos = {
 }
 
 ########################################################
+sociais = {
+    'por favor': 1.6,
+    'com licença': 1.6,
+    'obrigado': 1.7,
+    'obrigada': 1.7,
+    'por gentileza': 1.6,
+    'por obséquio': 1.6,
+    'por obsequio': 1.6,
+}
 
 
 ########################################################
