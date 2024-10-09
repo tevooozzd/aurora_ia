@@ -62,13 +62,13 @@ sociais = {
 
 def inicar_sexta():
     reconhecer = sr.Recognizer()    #GUARDA O VALOR DE RECONHECER VOZ EM VARIAVEL
-    with sr.Microphone() as microfone:
-        reconhecer.adjust_for_ambient_noise(microfone)
-        print("SEXTA-FEIRA: Pode falar")
-        audio = reconhecer.listen(microfone)
-        texto = reconhecer.recognize_google(audio, language='pt-BR').lower()
-        print(f"Você disse: {texto}")
-        print('----------------------------------------------')
+    with sr.Microphone() as microfone:  # COM ATIVA.MICROFONE COMO MIC (CRIA VARIAVEL MIC)
+        reconhecer.adjust_for_ambient_noise(microfone)  # O VALOR DA VARIAVEL RECONHECER E UMA FUNÇÃO DE TIRAR RUIDOS PARA O PARAMETRO (MICROFONE)
+        print("SEXTA-FEIRA: Pode falar") # VAI PRINTAR NA TELA PARA O USUARIO PODE FALAR, ASSIM EVITANDO FALAR E NAO CAPTAR
+        audio = reconhecer.listen(microfone) # GUARDA O VALOR DO AUDIO (RECONHECE O AUDIO) EM VARIAVEL AUDIO
+        texto = reconhecer.recognize_google(audio, language='pt-BR').lower() # TRANSFORMA EM TEXTO PARA A LINGUA PORTUGUESA E ARMAZENA NA VARIAVEL TEXTO
+        print(f"Você disse: {texto}") # PRINTA PARA O USUARIO TER CONHECIMENTO DO QUE FOI SALVO DE SUA FALA
+        print('----------------------------------------------') # EMBELEZAMENTO
     try:
         if any(palavra in texto for palavra in dic_iniciar_seg):
             seg_iniciar_resposta = "Sexta-feira está ativa agora, vamos prosseguir!"
