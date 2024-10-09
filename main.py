@@ -91,6 +91,11 @@ if st_au:
 ########################################################
 
 def search_aurora(searchi):
+    iris_search_voice = "Vamos achar isso para você!"
+    engine = pyttsx3.init()
+    engine.setProperty('voice', engine.getProperty('voices')[0].id)
+    engine.say(iris_search_voice)
+    engine.runAndWait()
     url = f"https://www.google.com/search?q={searchi}"
     webbrowser.open(url)
 
