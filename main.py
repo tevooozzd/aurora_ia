@@ -17,10 +17,15 @@ def start_aurora():
         texto = rec.recognize_google(audio, language='pt-BR').lower()
         if 'aurora' in texto:
             os.system('cls' if os.name == 'nt' else 'clear')
-            print("Aurora, is ONLINE!")
-            time.sleep(1)
-            print("Let's go!")
-            return texto.upper 
+            au_start_answer = "Aurora está ativa agora, como posso ajudar?!"
+            engine = pyttsx3.init()
+            vozes = engine.getProperty('voices')
+            for voz in vozes:
+                if 'female' in voz.name.lower():  
+                    engine.setProperty('voice', voz.id)
+                    break
+            engine.say(au_start_answer)
+            engine.runAndWait()
     except sr.UnknownValueError:
         print("I don't understand sorry.")
         return ""
