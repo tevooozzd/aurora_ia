@@ -38,6 +38,16 @@ pesquisar_e_sinonimos = {
 }
 
 ########################################################
+
+dic_iniciar_seg = { 
+    'cesta': 0,
+    'sexta ': 0,
+    'sexta-feira': 0,
+    'sexta': 0,
+    }
+
+########################################################
+
 sociais = {
     'por favor': 1.6,
     'com licença': 1.6,
@@ -49,35 +59,38 @@ sociais = {
 }
 
 
+
+
+
 ########################################################
-def start_iris():
-    rec = sr.Recognizer() 
-    with sr.Microphone() as mic:
-        rec.adjust_for_ambient_noise(mic)
+def inicar_sexta():
+    reconhecer = sr.Recognizer() 
+    with sr.Microphone() as microfone:
+        reconhecer.adjust_for_ambient_noise(microfone)
         print("SEXTA-FEIRA: Pode falar")
-        audio = rec.listen(mic)
-        texto = rec.recognize_google(audio, language='pt-BR').lower()
+        audio = reconhecer.listen(microfone)
+        texto = reconhecer.recognize_google(audio, language='pt-BR').lower()
         print(f"Você disse: {texto}")
         print('----------------------------------------------')
     try:
-        if any(palavra in texto for palavra in dic_start_seg):
-            iris_start_answer = "Sexta-feira está ativa agora, vamos prosseguir!"
-            print(f'{iris_start_answer.upper()} \nAGUARDE ATE A MENSAGEM DE VOZ TERMINAR!')
+        if any(palavra in texto for palavra in dic_iniciar_seg):
+            seg_iniciar_resposta = "Sexta-feira está ativa agora, vamos prosseguir!"
+            print(f'{seg_iniciar_resposta.upper()} \nAGUARDE ATE A MENSAGEM DE VOZ TERMINAR!')
             print('----------------------------------------------')
             engine = pyttsx3.init()
             engine.setProperty('voice', engine.getProperty('voices')[0].id)
-            engine.say(iris_start_answer)
+            engine.say(seg_iniciar_resposta)
             engine.runAndWait()
             return True 
 
     except sr.UnknownValueError:
-        iris_start_error = "Não entendi, tente novamente!"
+        seg_iniciar_erro = "Não entendi, tente novamente!"
         engine = pyttsx3.init()
         engine.setProperty('voice', engine.getProperty('voices')[0].id)
-        engine.say(iris_start_error)
+        engine.say(seg_iniciar_erro)
         engine.runAndWait()
 
-st_au = start_iris()
+st_au = inicar_sexta()
 ########################################################
 
 def understanding_user_iris():
