@@ -70,8 +70,8 @@ def inicar_sexta():
         print(f"Você disse: {texto}") # PRINTA PARA O USUARIO TER CONHECIMENTO DO QUE FOI SALVO DE SUA FALA
         print('----------------------------------------------') # EMBELEZAMENTO
     try:
-        if any(palavra in texto for palavra in dic_iniciar_seg):
-            seg_iniciar_resposta = "Sexta-feira está ativa agora, vamos prosseguir!"
+        if any(palavra in texto for palavra in dic_iniciar_seg): # SE NA VARIAVEL TEXTO TIVER QUALQUER CHAVE DO DICIONARIO VAI INICIAR, CASO CONTRARIO NÃO (NO CASO É PARA INICIAR, CHAMANDO PELO NOME DA IA, COMO O SIRI "HEY SIRI", CASO CONTRARIO NAO CHAMA)
+            seg_iniciar_resposta = "Sexta-feira está ativa agora, vamos prosseguir!" # SE FOR ATIVADO O VALOR, VAI SALVAR ESSA RESPOSTA PADRÃO DO SISTEMA EM VARIAVEL
             print(f'{seg_iniciar_resposta.upper()} \nAGUARDE ATÉ A MENSAGEM DE VOZ TERMINAR!')
             print('----------------------------------------------')
             engine = pyttsx3.init()
