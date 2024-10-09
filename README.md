@@ -1,2 +1,2 @@
-# aurora_ia
-Este repositório contém um projeto de assistente virtual chamado Aurora, desenvolvido em Python.
+# SEGUNDA-FEIRA IA
+Este repositório contém um projeto de assistente virtual chamado SEGUNDA-FEIRA, desenvolvido em Python.
